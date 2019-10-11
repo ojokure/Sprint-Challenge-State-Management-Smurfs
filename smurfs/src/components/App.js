@@ -1,9 +1,11 @@
 import React from "react";
 import connect from "react-redux";
 
-export function App () {
+ function App () {
+
+  
   return (
-    <div>
+    <div className= "App" >
       <h1> Please Sign In </h1>
       <form>
         <div>

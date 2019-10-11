@@ -4,7 +4,6 @@ import App from "./App";
 import * as actionCreators from "../state/actionCreators";
 
 export function Post(props) {
-  console.log(props);
   useEffect(() => {
     props.fetchData();
   }, []);
@@ -14,8 +13,7 @@ export function Post(props) {
       {props.apiData &&
         props.apiData.map(el => (
           <div>
-            Hi my name is {el.name}, i am {el.age} years old and i am
-            {el.height} tall `
+            Hi my name is {el.name}, i am {el.age} years old and i am {el.height} tall 
           </div>
         ))}
     </div>

@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import Post from "./Post";
 import * as actionCreators from "../state/actionCreators";
 
 function App(props) {
+  const initialFormState = {
+    name: "",
+    age: "",
+    height: ""
+  };
 
-  console.log(props)
+  const [state, setState] = useState(initialFormState);
   const handleChange = e => {
-    // setState({ [e.target.name]: e.target.value });
+    setState({ [e.target.name]: e.target.value });
   };
 
   const handleSubmit = e => {
@@ -17,29 +22,44 @@ function App(props) {
       age: props.newPost.age,
       height: props.newPost.age
     };
-    props.createPost(post);
+    props.postData(post);
   };
 
   return (
     <div className="App">
       <h1> Please Sign In </h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <label>Name </label>
           <br />
-          <input type="text" name="name" />
+          <input
+            type="text"
+            name="name"
+            onChange={handleChange}
+            value={state.name}
+          />
         </div>
         <br />
         <div>
           <label>Age </label>
           <br />
-          <input type="text" name="age" />
+          <input
+            type="text"
+            name="age"
+            onChange={handleChange}
+            value={state.age}
+          />
         </div>
         <br />
         <div>
           <label>Height </label>
           <br />
-          <input type="text" name="height" />
+          <input
+            type="text"
+            name="height"
+            onChange={handleChange}
+            value={state.height}
+          />
         </div>
         <br />
         <button type="submit">Submit</button>

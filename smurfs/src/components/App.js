@@ -1,16 +1,33 @@
-import React, { Component } from "react";
-import "./App.css";
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <h1>SMURFS! 2.0 W/ Redux</h1>
-        <div>Welcome to your state management version of Smurfs!</div>
-        <div>Start inside of your `src/index.js` file!</div>
-        <div>Have fun!</div>
-      </div>
-    );
-  }
+import React from "react";
+import connect from "react-redux";
+
+export function App () {
+  return (
+    <div>
+      <h1> Please Sign In </h1>
+      <form>
+        <div>
+          <label>Name </label>
+          <br />
+          <input type="text" name="name" />
+        </div>
+        <br />
+        <div>
+          <label>Age </label>
+          <br />
+          <input type="text" name="age" />
+        </div>
+        <br />
+        <div>
+          <label>Height </label>
+          <br />
+          <input type="text" name="height" />
+        </div>
+        <br />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
 }
 
 export default App;

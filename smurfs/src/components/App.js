@@ -24,7 +24,6 @@ function App(props) {
     };
     props.postData(post);
   };
-
   return (
     <div className="App">
       <h1> Please Sign In </h1>

@@ -16,7 +16,7 @@ export function dataReducer(state = intialState, action) {
     case types.NEW_POST:
       return {
         ...state,
-        newPost: action.payload
+        apiData: state.apiData.concat(action.payload)
       };
     default:
       return state;

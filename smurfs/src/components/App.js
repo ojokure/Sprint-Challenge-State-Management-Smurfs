@@ -1,11 +1,11 @@
 import React from "react";
-import connect from "react-redux";
+import { connect } from "react-redux";
+import Post from "./Post";
+import * as actionCreators from "../state/actionCreators";
 
- function App(){
-
-
+function App(props) {
   return (
-    <div className= "App" >
+    <div className="App">
       <h1> Please Sign In </h1>
       <form>
         <div>
@@ -28,9 +28,19 @@ import connect from "react-redux";
         <br />
         <button type="submit">Submit</button>
       </form>
-      <hr/>
+      <hr />
+      <Post />
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    test: state.data.test
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  actionCreators
+)(App);

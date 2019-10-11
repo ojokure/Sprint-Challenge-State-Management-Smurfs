@@ -1,9 +1,9 @@
 import React from "react";
 import connect from "react-redux";
 
- function App () {
+ function App(){
 
-  
+
   return (
     <div className= "App" >
       <h1> Please Sign In </h1>
@@ -28,6 +28,7 @@ import connect from "react-redux";
         <br />
         <button type="submit">Submit</button>
       </form>
+      <hr/>
     </div>
   );
 }

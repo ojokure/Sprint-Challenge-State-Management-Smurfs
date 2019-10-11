@@ -4,6 +4,22 @@ import Post from "./Post";
 import * as actionCreators from "../state/actionCreators";
 
 function App(props) {
+
+  console.log(props)
+  const handleChange = e => {
+    // setState({ [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    const post = {
+      name: props.newPost.name,
+      age: props.newPost.age,
+      height: props.newPost.age
+    };
+    props.createPost(post);
+  };
+
   return (
     <div className="App">
       <h1> Please Sign In </h1>
@@ -36,6 +52,8 @@ function App(props) {
 
 const mapStateToProps = state => {
   return {
+    apiData: state.data.apiData,
+    newPost: state.data.newPost,
     test: state.data.test
   };
 };

@@ -8,14 +8,12 @@ const intialState = {
 
 export function dataReducer(state = intialState, action) {
   switch (action.type) {
-    case type:
-      types.API_DATA;
+    case types.API_DATA:
       return {
         ...state,
         apiData: action.payload
       };
-    case type:
-      types.NEW_POST;
+    case types.NEW_POST:
       return {
         ...state,
         newPost: action.payload

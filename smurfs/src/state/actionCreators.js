@@ -8,9 +8,8 @@ export const fetchData = () => dispatch => {
   });
 };
 
-export const postData = post => dispatch => {
-//   dispatch({ type: types.NEW_POST });
-//   axios.post("http://localhost:3333/smurfs").then(res => {
+export const postData = (post) => dispatch => {
+  axios.post("http://localhost:3333/smurfs", post).then(res => {
     dispatch({ type: types.NEW_POST, payload: post });
-//   });
+  });
 };

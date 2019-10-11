@@ -12,17 +12,18 @@ function App(props) {
 
   const [state, setState] = useState(initialFormState);
   const handleChange = e => {
-    setState({ [e.target.name]: e.target.value });
+    setState({...state, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = e => {
     e.preventDefault();
     const post = {
-      name: props.newPost.name,
-      age: props.newPost.age,
-      height: props.newPost.age
+      name: state.name,
+      age: state.age,
+      height: state.height
     };
     props.postData(post);
+    // console.log(post)
   };
   return (
     <div className="App">
